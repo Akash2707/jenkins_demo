@@ -1,5 +1,9 @@
 pipeline {
   agent any
+  tools{
+    nodejs 'nodejs'
+    helm 'helm'
+  }
   stages {
     stage('Checkout Code') {
       steps {
@@ -11,7 +15,7 @@ pipeline {
         stage('Verify tools') {
           steps {
             sh "npm -v"
-            sh "docker -v"
+            sh "helm -v"
           }
         }
       }
