@@ -10,19 +10,16 @@ pipeline {
       parallel {
         stage('Verify tools') {
           steps {
-            sh 'sh "npm -v"'
-          }
-        }
-        stage('') {
-          steps {
-            sh 'sh "docker -v"'
+            sh "npm -v"
+            sh "docker -v"
           }
         }
       }
     }
-    stage('Build container') {
+    stage('Build helm chart') {
       steps {
-        sh 'sh "docker build -t aakash2707/node_es:v15.0"'
+        sh "helm init"
+        sh "helm install ."
       }
     }
   }
