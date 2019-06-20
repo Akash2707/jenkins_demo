@@ -1,0 +1,21 @@
+{
+  "name": "aws-elastic",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Elastic Node Demo",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "aws-sdk": "^2.477.0",
+    "cors": "^2.8.5",
+    "elasticsearch": "^16.1.1",
+    "express": "^4.17.1",
+    "get-json": "^1.0.1",
+    "http-aws-es": "^6.0.0"
+  }
+}
