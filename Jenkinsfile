@@ -1,7 +1,7 @@
 def shellScriptToinstallHelm = 
                                 directory_path=$(pwd)
                                 helm_file_name=helm
-                                helm_file_count=$(find $directory_path -name $helm_file_name | wc -l)
+                                helm_file_count=$(find $(directory_path) -name $helm_file_name | wc -l)
                                 
                                 if [ $helm_file_count -gt 0 ]; then
                                     echo "helm found in /usr/local/bin! Skipping installation"
@@ -39,7 +39,7 @@ pipeline {
     stage('Download kubectl and Helm') {
           steps {
             // sh shellScriptToinstallkubectl
-            sh shellScriptToinstallHelm
+            sh shellScriptToinstallHelm}"
 
           }
         }
