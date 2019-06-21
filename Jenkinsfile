@@ -38,8 +38,8 @@ pipeline {
     }
     stage('Download kubectl and Helm') {
           steps {
-            sh "shellScriptToinstallkubectl"
-            sh "shellScriptToinstallHelm"
+            sh shellScriptToinstallkubectl
+            sh shellScriptToinstallHelm
 
           }
         }
