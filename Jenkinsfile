@@ -18,7 +18,6 @@ def shellScriptToinstallHelm = '''
                                 pip install --upgrade awscli
 
                                 kube_config_path=$(pwd)/kube-config
-                                aws configure
                                 aws eks update-kubeconfig --name=analytics-test-eric --kubeconfig=${kube_config_path} --region=us-west-2
                                 export KUBECONFIG=${kube_config_path}
                              '''
