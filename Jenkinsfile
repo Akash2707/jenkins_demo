@@ -29,9 +29,8 @@ def shellScriptToinstallkubectl = '''
                                     chmod +x ./kubectl
                                     sudo mv ./kubectl /usr/local/bin/kubectl
                                   '''
-
 pipeline {
- agent any
+  agent any
   stages {
     stage('Checkout Code') {
       steps {
