@@ -41,7 +41,6 @@ pipeline {
           steps {
             sh shellScriptToinstallkubectl
             sh shellScriptToinstallHelm
-
           }
         }
     stage('Build helm chart') {
