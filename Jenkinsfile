@@ -21,7 +21,7 @@ def shellScriptToinstallHelm = '''
                                 aws eks update-kubeconfig --name=analytics-test-eric --kubeconfig=${kube_config_path} --region=us-west-2
                                 export KUBECONFIG=${kube_config_path}
 
-                                ./helm --help
+                                ./helm help
                              '''
 
 def shellScriptToinstallkubectl = '''
@@ -39,9 +39,16 @@ pipeline {
       }
     }
     stage('Download kubectl and Helm') {
+          steps {
+            sh shellScriptToinstallkubectl
+            sh shellScriptToinstallHelm
+
+          }
+        }
+    stage('Build helm chart') {
       steps {
-        sh shellScriptToinstallkubectl
-        sh shellScriptToinstallHelm
+        sh "./helm init"
+        sh "./helm install ."
       }
     }
   }
