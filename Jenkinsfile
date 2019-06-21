@@ -1,4 +1,4 @@
-def shellScriptToinstallHelm = '''
+def shellScriptToinstallHelm = 
                                 directory_path=$(pwd)
                                 helm_file_name=helm
                                 helm_file_count=$(find $directory_path -name $helm_file_name | wc -l)
@@ -20,7 +20,7 @@ def shellScriptToinstallHelm = '''
                                 kube_config_path=$(pwd)/kube-config
                                 aws eks update-kubeconfig --name=analytics-test-eric --kubeconfig=${kube_config_path} --region=us-west-2
                                 export KUBECONFIG=${kube_config_path}
-                             '''
+                             
 
 // def shellScriptToinstallkubectl = '''
 //                                     curl -LO https://storage.googleapis.com/kubernetes-release/release/v1.15.0/bin/linux/amd64/kubectl
