@@ -45,8 +45,8 @@ pipeline {
         }
     stage('Build helm chart') {
       steps {
-        sh "helm init"
-        sh "helm install ."
+        sh "./helm init"
+        sh "./helm install ."
       }
     }
   }
