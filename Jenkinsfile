@@ -14,6 +14,7 @@ def shellScriptToinstallHelm = '''
                                 fi
                                 
                                 virtualenv helmv
+                                #!/usr/bin/env bash
                                 source helmv/bin/activate
                                 pip install --upgrade awscli
 
