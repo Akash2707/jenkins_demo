@@ -13,6 +13,7 @@ pipeline {
     stage('Download kubectl and Helm') {
           steps {
             sh shellScriptToinstallkubectl
+            sh 'chmod +x scripts/*.sh'
             sh 'scripts/installhelm.sh'
           }
         }
