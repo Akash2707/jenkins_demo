@@ -17,11 +17,11 @@ pipeline {
             sh 'scripts/installhelm.sh'
           }
         }
-    stage('Build helm chart') {
-      steps {
-        sh "./helm init"
-        sh "./helm install ."
-      }
-    }
+    // stage('Build helm chart') {
+    //   steps {
+    //     // sh "./helm init"
+    //     // sh "./helm install ."
+    //   }
+    // }
   }
 }

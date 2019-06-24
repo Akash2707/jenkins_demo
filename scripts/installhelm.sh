@@ -31,3 +31,5 @@ aws eks update-kubeconfig --name=analytics-test-eric --kubeconfig=${kube_config_
 export KUBECONFIG=${kube_config_path}
 
 ./helm help
+
+./helm init
