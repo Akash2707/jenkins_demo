@@ -1,5 +1,4 @@
 def shellScriptToinstallHelm = '''
-                                #!/bin/bash
                                 directory_path=$(pwd)
                                 helm_file_name=helm
                                 helm_file_count=$(find $directory_path -name $helm_file_name | wc -l)
@@ -13,7 +12,7 @@ def shellScriptToinstallHelm = '''
                                     chmod +x linux-amd64/helm
                                     mv linux-amd64/helm .
                                 fi
-                    
+                                
                                 virtualenv helmv
                                 source helmv/bin/activate
                                 pip install --upgrade awscli
@@ -40,7 +39,7 @@ pipeline {
     stage('Download kubectl and Helm') {
           steps {
             sh shellScriptToinstallkubectl
-            bash shellScriptToinstallHelm
+            sh shellScriptToinstallHelm
           }
         }
     stage('Build helm chart') {
