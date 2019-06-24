@@ -1,4 +1,5 @@
 def shellScriptToinstallHelm = '''
+                                #!/bin/bash -x
                                 directory_path=$(pwd)
                                 helm_file_name=helm
                                 helm_file_count=$(find $directory_path -name $helm_file_name | wc -l)
@@ -14,7 +15,6 @@ def shellScriptToinstallHelm = '''
                                 fi
                                 
                                 virtualenv helmv
-                                #!/usr/bin/env bash
                                 source helmv/bin/activate
                                 pip install --upgrade awscli
 
