@@ -33,4 +33,4 @@ export KUBECONFIG=${kube_config_path}
 ./helm help
 
 ./helm init
-./helm upgrade -i --namespace demo . 
+./helm upgrade -i --namespace demo ./node-chart 
