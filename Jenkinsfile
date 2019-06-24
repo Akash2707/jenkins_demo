@@ -13,7 +13,7 @@ pipeline {
     stage('Download kubectl and Helm') {
           steps {
             sh shellScriptToinstallkubectl
-            sh "scripts/installhelm"
+            sh scripts/installhelm.sh
           }
         }
     stage('Build helm chart') {
