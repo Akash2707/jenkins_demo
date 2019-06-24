@@ -13,10 +13,21 @@ else
     mv linux-amd64/helm .
 fi
 
+if [ $aws_iam_file_count -gt 0 ]; then
+    echo "aws-iam-authenticator found in /usr/local/bin! Skipping installation"
+else
+    echo "aws-iam-authenticator not found!! Installing aws-iam-authenticator"
+    curl -o aws-iam-authenticator https://amazon-eks.s3-us-west-2.amazonaws.com/1.13.7/2019-06-11/bin/darwin/amd64/aws-iam-authenticator
+    chmod +x aws-iam-authenticator
+fi
+
 virtualenv helmv
 source helmv/bin/activate
 pip install --upgrade awscli
+
+export PATH=$PATH:$directory_path
 kube_config_path=$(pwd)/kube-config
 aws eks update-kubeconfig --name=analytics-test-eric --kubeconfig=${kube_config_path} --region=us-west-2
 export KUBECONFIG=${kube_config_path}
+
 ./helm help
