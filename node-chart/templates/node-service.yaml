@@ -4,8 +4,8 @@ metadata:
   name: node-service
 spec: 
   ports:
-  - port: 80
-    targetPort: 8080
+  - port: {{.Values.intPort}}
+    targetPort: {{.Values.nodeDeployPort}}
     protocol: TCP
   selector:
     name: node

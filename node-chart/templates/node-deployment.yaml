@@ -14,6 +14,6 @@ spec:
     spec:
       containers: 
       - name: node
-        image: aakash2707/node_es:v16.0
+        image: {{.Values.imageRegistry}}:{{.Values.nodeTag}}
         ports:
-        - containerPort: 8080
+        - containerPort: {{.Values.nodeDeployPort}}
